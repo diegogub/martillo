@@ -1,7 +1,7 @@
 (in-package :martillo)
 
-(defmacro when-opt ((options opt) &body body)
+(defmacro when-opt ((options opt) val &body body)
   "Execure body if unix option exists."
-  `(let ((it (getf ,options ,opt)))
-     (when it
+  `(let ((,val (getf ,options ,opt)))
+     (when ,val
        ,@body)))

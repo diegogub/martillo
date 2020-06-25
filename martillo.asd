@@ -5,7 +5,8 @@
   :depends-on ()
   :components ((:module "src"
                 :components
-                ((:file "main"))))
+                ((:file "main")
+                 (:file "cmd"))))
   :description "Macros and usefull functions."
   :in-order-to ((test-op (test-op "martillo/tests"))))
 
