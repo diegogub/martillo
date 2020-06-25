@@ -1,0 +1,13 @@
+# Martillo - Macros and usefull functions.
+
+## Usage
+
+## Installation
+
+## Author
+
+* Diego Guraieb
+
+## Copyright
+
+Copyright (c) 2020 Diego Guraieb
