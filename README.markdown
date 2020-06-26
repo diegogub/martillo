@@ -1,8 +1,4 @@
-# Martillo - Macros and usefull functions.
-
-## Usage
-
-## Installation
+# Martillo - Macros and useful functions.
 
 ## Author
 
