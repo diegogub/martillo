@@ -2,10 +2,11 @@
   :version "0.1.0"
   :author "Diego Guraieb"
   :license ""
-  :depends-on ()
+  :depends-on (lack)
   :components ((:module "src"
                 :components
                 ((:file "main")
+                 (:file "ningle")
                  (:file "cmd"))))
   :description "Macros and usefull functions."
   :in-order-to ((test-op (test-op "martillo/tests"))))
