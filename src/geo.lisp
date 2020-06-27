@@ -1,9 +1,5 @@
 (in-package :martillo)
 
-
-(ql:quickload "cl-maxminddb")
-(ql:quickload "cl-geoip")
-
 (defun geo-get-value (index value vals)
   (if vals
   (let ((record (remove-if-not #'(lambda (val) (string= (first val) index)) vals)))
