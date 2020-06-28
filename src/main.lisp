@@ -9,6 +9,9 @@
     :param
     :header
     :get-ip
-    :is-method)
+    :is-method
+    :locate-ip
+    :*maxminddb*
+    :*maxmind-mw*)
   (:nicknames "mar"))
 (in-package :martillo)
