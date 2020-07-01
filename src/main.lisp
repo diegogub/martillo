@@ -25,4 +25,4 @@
 
 (defmacro msetf (accessor from to)
   "Copy value between objects with same accessors"
-  `(setf (,accessor ,from) (,accessor ,to)))
+  `(setf (,accessor ,to) (,accessor ,from)))
