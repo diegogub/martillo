@@ -8,6 +8,7 @@
                 ((:file "main")
                  (:file "ningle")
                  (:file "geo")
+                 (:file "money")
                  (:file "cmd"))))
   :description "Macros and usefull functions."
   :in-order-to ((test-op (test-op "martillo/tests"))))
