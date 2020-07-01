@@ -2,6 +2,7 @@
   (:use :cl)
   (:export 
     :when-opt
+    :msetf
     ;;micro-money
     :to-micro
     :micro-to-float
@@ -20,3 +21,8 @@
     :*maxmind-mw*)
   (:nicknames "mar"))
 (in-package :martillo)
+
+
+(defmacro msetf (accessor from to)
+  "Copy value between objects with same accessors"
+  `(setf (,accessor ,from) (,accessor ,to)))
