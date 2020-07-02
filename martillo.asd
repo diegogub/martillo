@@ -2,7 +2,7 @@
   :version "0.1.0"
   :author "Diego Guraieb"
   :license ""
-  :depends-on (lack cl-maxminddb)
+  :depends-on (lack cl-maxminddb ironclad bordeaux-threads)
   :components ((:module "src"
                 :components
                 ((:file "main")
