@@ -2,14 +2,15 @@
   :version "0.1.0"
   :author "Diego Guraieb"
   :license ""
-  :depends-on (lack cl-maxminddb ironclad bordeaux-threads)
+  :depends-on (vlime lack lack-request lack-response cl-maxminddb ironclad bordeaux-threads)
   :components ((:module "src"
                 :components
                 ((:file "main")
-                 (:file "ningle")
+                 (:file "id")
+                 (:file "cmd")
                  (:file "geo")
                  (:file "money")
-                 (:file "cmd"))))
+                 (:file "ningle"))))
   :description "Macros and usefull functions."
   :in-order-to ((test-op (test-op "martillo/tests"))))
 
