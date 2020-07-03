@@ -3,6 +3,8 @@
   (:export 
     :when-opt
     :msetf
+    :gen-id
+    :sha1-hash
     ;;micro-money
     :to-micro
     :micro-to-float
