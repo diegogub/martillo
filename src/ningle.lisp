@@ -61,8 +61,6 @@
           (setf (gethash "x-continent" (getf env :headers) ) continent))
 
         (when timezone
-          (setf (gethash "x-timezone" (getf env :headers) ) timezone))
-        (print (assoc :country geo))
-        (print geo))
+          (setf (gethash "x-timezone" (getf env :headers) ) timezone)))
       (let ((res (funcall app env)))
         res))))
