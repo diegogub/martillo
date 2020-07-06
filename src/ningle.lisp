@@ -1,8 +1,6 @@
 (in-package :martillo)
 
 (defmacro redirect (response url) "Redirect to other url"
-  (when (not (typep url 'string))
-    (error "URL must be string"))
   `(progn 
     (setf (lack.response:response-headers ,response)
       (append (lack.response:response-headers ,response)
