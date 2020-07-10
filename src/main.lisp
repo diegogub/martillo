@@ -13,6 +13,9 @@
     ;; Ningle helpers
     :redirect
     :with-status
+    :set-header
+    :set-cookie
+    :set-content-type
     :query-param
     :param
     :header

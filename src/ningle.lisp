@@ -31,6 +31,21 @@
     `(header ,req "x-forwarded-for")
    `(progn (lack.request:request-remote-addr ,req))))
 
+(defmacro set-content-type (res content-type)
+  `(setf (lack.response:response-headers ,res)
+      (append (lack.response:response-headers ,res)
+              (list :content-type ,content-type))))
+
+(defmacro set-cookie (res value)
+  `(setf (lack.response:response-headers ,res)
+      (append (lack.response:response-headers ,res)
+              (list :set-cookie ,value))))
+
+(defmacro set-header (res header value)
+  `(setf (lack.response:response-headers ,res)
+      (append (lack.response:response-headers ,res)
+              (list ,header ,value))))
+
 (defmacro is-method (req m)
   "Checks request method"
     `(eql (lack.request:request-method ,req) ,m))
