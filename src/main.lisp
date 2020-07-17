@@ -5,6 +5,12 @@
     :msetf
     :gen-id
     :sha1-hash
+    ;;validation
+    :valid
+    :mvalid
+    :valid-not
+    :mvalid-not
+
     ;;micro-money
     :to-micro
     :micro-to-float

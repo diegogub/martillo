@@ -7,6 +7,7 @@
                 :components
                 ((:file "main")
                  (:file "id")
+                 (:file "validation")
                  (:file "cmd")
                  (:file "geo")
                  (:file "money")
