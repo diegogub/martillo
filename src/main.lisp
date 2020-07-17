@@ -6,10 +6,10 @@
     :gen-id
     :sha1-hash
     ;;validation
-    :valid
-    :mvalid
-    :valid-not
-    :mvalid-not
+    : return-if-not
+    : return-if
+    : m-return-if-not
+    : m-return-if
 
     ;;micro-money
     :to-micro

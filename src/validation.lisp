@@ -1,17 +1,17 @@
 (in-package :martillo)
 
-(defmacro valid-not (f &rest c)
-  `(when (not ,@c)
+(defmacro return-if-not (f &rest c)
+  `(unless ,@c
      (return-from ,f nil)))
 
-(defmacro mvalid-not (f conditions)
+(defmacro m-return-if-not (f conditions)
   `(progn ,@(mapcar (lambda (a)
-                     `(valid-not ,f ,a)) conditions)))
+                     `(return-if-not ,f ,a)) conditions)))
 
-(defmacro valid (f &rest c)
+(defmacro return-if (f &rest c)
   `(when ,@c
      (return-from ,f nil)))
 
-(defmacro mvalid (f conditions)
+(defmacro m-return-if (f conditions)
   `(progn ,@(mapcar (lambda (a)
-                     `(valid ,f ,a)) conditions)))
+                     `(return-if ,f ,a)) conditions)))
