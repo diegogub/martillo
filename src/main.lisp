@@ -34,6 +34,8 @@
 (in-package :martillo)
 
 
-(defmacro msetf (accessor from to)
+(defmacro msetf (from to &rest params)
   "Copy value between objects with same accessors"
-  `(setf (,accessor ,to) (,accessor ,from)))
+    (let ((inst (loop for p in params
+        collect `(setf (,p ,to) (,p ,from)))))
+      (push 'progn inst)))
