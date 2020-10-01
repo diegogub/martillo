@@ -1,5 +1,6 @@
 (defpackage martillo
-  (:use :cl)
+  (:use :cl
+        :ningle)
   (:export 
     :when-opt
     :msetf

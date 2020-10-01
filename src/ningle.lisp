@@ -1,5 +1,29 @@
 (in-package :martillo)
 
+(defmacro print-route (route)
+  `(format t "~A || ~A => ~A ~C" ,(getf route :method) ,(getf route :path) ,(getf route :handler) #\linefeed))
+
+;; (print-route (:path "/testing" :method :GET))
+
+(defmacro define-routes (app routes &key (verbose nil))
+  "Defines a group of ningle routes and print them while defining them."
+  (let ((printers '())
+        (definitions '()))
+    (when verbose
+      (loop for r in routes
+        do (push `(print-route ,r) printers)))
+
+    (loop for r in routes
+      do (push `(setf (ningle:route ,app ,(getf r :path) :method ,(getf r :path)) ,(getf r :handler)) definitions))
+
+    (when printers
+        (setf definitions (append printers definitions)))
+
+    (push 'progn definitions)))
+
+;(define-routes (make-instance 'ningle:app) ((:path "/test" :method :POST :handler #'test) 
+                       ;(:path "/ping" :method :GET :handler #'test)) :verbose t)
+
 (defmacro redirect (response url) "Redirect to other url"
   `(progn 
     (setf (lack.response:response-headers ,response)
