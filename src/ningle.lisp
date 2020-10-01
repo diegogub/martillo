@@ -10,6 +10,7 @@
   (let ((printers '())
         (definitions '()))
     (when verbose
+      (push (format t "~C" #\linefeed) printers)
       (loop for r in routes
         do (push `(print-route ,r) printers)))
 
