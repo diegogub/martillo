@@ -18,6 +18,7 @@
     :m*
     :m/
     ;; Ningle helpers
+    :define-routes
     :redirect
     :with-status
     :set-header
