@@ -14,7 +14,7 @@
         do (push `(print-route ,r) printers)))
 
     (loop for r in routes
-      do (push `(setf (ningle:route ,app ,(getf r :path) :method ,(getf r :path)) ,(getf r :handler)) definitions))
+      do (push `(setf (ningle:route ,app ,(getf r :path) :method ,(getf r :method)) ,(getf r :handler)) definitions))
 
     (when printers
         (setf definitions (append printers definitions)))
