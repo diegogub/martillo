@@ -5,8 +5,7 @@
   (let ((slots 
           (map 'list #'string 
                (map 'list #'closer-mop:slot-definition-name 
-                    (closer-mop:class-slots (find-class class)))))
-        )
+                    (closer-mop:class-slots (find-class class))))))
     `(defmethod jonathan:%to-json ((obj ,class))
        (jonathan:with-object
          ,@(loop for s in slots
