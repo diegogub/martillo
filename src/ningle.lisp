@@ -10,9 +10,9 @@
   (let ((printers '())
         (definitions '()))
     (when verbose
-      (push (format t "~C" #\linefeed) printers)
       (loop for r in routes
-        do (push `(print-route ,r) printers)))
+        do (push `(print-route ,r) printers))
+      (push '(format t "~C" #\linefeed) printers))
 
     (loop for r in routes
       do (push `(setf (ningle:route ,app ,(getf r :path) :method ,(getf r :method)) ,(getf r :handler)) definitions))

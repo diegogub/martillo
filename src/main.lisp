@@ -12,6 +12,9 @@
     :m-return-if-not
     :m-return-if
 
+    ;; JSON jonathan
+    :def-json
+
     ;;micro-money
     :to-micro
     :micro-to-float
