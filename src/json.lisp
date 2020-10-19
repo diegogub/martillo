@@ -1,4 +1,5 @@
 (in-package :martillo)
+(ql:quickload :json-mop)
 
 (defmacro def-json (class)
   (closer-mop:ensure-finalized (find-class class))
@@ -9,4 +10,4 @@
     `(defmethod jonathan:%to-json ((obj ,class))
        (jonathan:with-object
          ,@(loop for s in slots
-              collect `(jonathan:write-key-value ,(string-downcase s) (slot-value obj `,(read-from-string ,s))))))))
+              collect `(jonathan:write-key-value ,s (slot-value obj `,(read-from-string ,s))))))))
