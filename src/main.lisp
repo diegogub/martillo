@@ -6,6 +6,8 @@
     :msetf
     :gen-id
     :sha1-hash
+    ;;Conditions
+    :def-conditions
     ;;validation
     :return-if-not
     :return-if
