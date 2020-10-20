@@ -7,6 +7,3 @@
   `(progn
      ,@defs
      nil)))
-
-(def-conditions (test
-                  err-test))
