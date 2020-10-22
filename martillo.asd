@@ -12,7 +12,7 @@
                  (:file "geo")
                  (:file "money")
                  (:file "ningle")
-                 (:file "json")
+                 (:file "conditions")
                  )))
   :description "Macros and usefull functions."
   :in-order-to ((test-op (test-op "martillo/tests"))))
