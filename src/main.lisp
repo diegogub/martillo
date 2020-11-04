@@ -4,6 +4,7 @@
   (:export 
     :when-opt
     :msetf
+    :ifn
     :gen-id
     :sha1-hash
     ;;Conditions
@@ -41,6 +42,10 @@
   (:nicknames "mar"))
 (in-package :martillo)
 
+(defmacro ifn (body default)
+  `(if ,body
+      ,body
+      ,default))
 
 (defmacro msetf (from to &rest params)
   "Copy value between objects with same accessors"
