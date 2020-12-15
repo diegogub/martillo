@@ -2,14 +2,13 @@
   :version "0.1.0"
   :author "Diego Guraieb"
   :license ""
-  :depends-on (lack lack-request lack-response cl-maxminddb ironclad bordeaux-threads ningle closer-mop jonathan)
+  :depends-on (lack lack-request lack-response ironclad bordeaux-threads ningle closer-mop jonathan)
   :components ((:module "src"
                 :components
                 ((:file "main")
                  (:file "id")
                  (:file "validation")
                  (:file "cmd")
-                 (:file "geo")
                  (:file "money")
                  (:file "ningle")
                  (:file "conditions")

@@ -79,28 +79,4 @@
   (let ((proxy-header (gethash "x-forwarded-for" (getf env :headers))))
     (if proxy-header
         proxy-header
-        (getf env :REMOTE-ADDR))))
-
-(defvar *maxminddb* "/srv/GeoIP2-City.mmdb")
-
-(defvar *maxmind-mw*
-  (lambda (app)
-    (lambda (env)
-      (let* ((geo (locate-ip *maxminddb* (real-ip env)))
-             (country (cdr (assoc :country geo)))
-             (city (cdr (assoc :city geo)))
-             (continent(cdr (assoc :continent geo)))
-             (timezone (cdr (assoc :timezone geo))))
-        (when country
-          (setf (gethash "x-country" (getf env :headers) ) country))
-
-        (when city 
-          (setf (gethash "x-city" (getf env :headers) ) city))
-
-        (when continent
-          (setf (gethash "x-continent" (getf env :headers) ) continent))
-
-        (when timezone
-          (setf (gethash "x-timezone" (getf env :headers) ) timezone)))
-      (let ((res (funcall app env)))
-        res))))
+       (getf env :REMOTE-ADDR))))
