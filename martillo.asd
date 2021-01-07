@@ -13,7 +13,7 @@
                  (:file "money")
                  (:file "ningle")
                  (:file "conditions")
-                 )))
+                 (:file "clos"))))
   :description "Macros and usefull functions."
   :in-order-to ((test-op (test-op "martillo/tests"))))
 

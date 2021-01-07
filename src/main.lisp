@@ -9,6 +9,8 @@
     :sha1-hash
     ;;Conditions
     :def-conditions
+    ;;Clos
+    :make-instance-from
 
     ;;validation
     :return-if-not
