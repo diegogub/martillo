@@ -16,8 +16,11 @@
                                      (let ((val `(handler-case 
                                                      (slot-value ,obj ',(closer-mop:slot-definition-name s))
                                                   (t () nil))))
-                                       (push val key-list)
-                                       (push iarg key-list)))
+                                       (when val
+                                         (progn 
+                                           (push val key-list)
+                                           (push iarg key-list)))
+                                       ))
                                 (t () ())))
                              ))
       `(make-instance ,class ,@key-list ,@params)))
