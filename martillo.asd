@@ -2,7 +2,7 @@
   :version "0.1.0"
   :author "Diego Guraieb"
   :license ""
-  :depends-on (lack lack-request lack-response cl-maxminddb ironclad bordeaux-threads closer-mop jonathan)
+  :depends-on (lack lack-request lack-response cl-maxminddb ironclad bordeaux-threads closer-mop jonathan uuid str)
   :components ((:module "src"
                 :components
                 ((:file "main")

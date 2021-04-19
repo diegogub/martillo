@@ -23,5 +23,8 @@
         (setf *counter* 0)
         (setf *counter* (+ 1 *counter*))))
 
-(defun gen-id (prefix)
+(defun gen-prefix-id (prefix)
   (concatenate 'string prefix (format nil "~36R~36R~36R" (get-universal-time) (random *max-random*) (get-counter))))
+
+(defun gen-uuid-id (&key (len 20))
+  (subseq (str:downcase (uuid:print-bytes nil (uuid:make-v4-uuid))) 0 len))

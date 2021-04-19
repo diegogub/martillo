@@ -4,7 +4,8 @@
     :when-opt
     :msetf
     :ifn
-    :gen-id
+    :gen-prefix-id
+    :gen-uuid-id
     :sha1-hash
     ;;Conditions
     :def-conditions
@@ -26,17 +27,7 @@
     :m*
     :m/
     ;; Ningle helpers
-    :define-routes
-    :redirect
-    :with-status
-    :set-header
-    :set-cookie
-    :set-content-type
-    :query-param
-    :param
-    :header
     :get-ip
-    :is-method
     :locate-ip
     :*maxminddb*
     :*maxmind-mw*)
